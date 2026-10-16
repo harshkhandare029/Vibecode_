@@ -1,0 +1,203 @@
+# FORMSENTRY — FUTURISTIC 3D UI INTEGRATION PROMPT
+
+Act as a senior Three.js developer, creative frontend engineer, and interactive UI designer.
+
+Upgrade my existing FormSentry DPDP Form Auditor into a futuristic, visually striking **Privacy Investigation Lab**. Recreate the visual concepts of an animated 3D scanning grid and interactive data particles using original code.
+
+Important: React Bits is inaccessible in my environment. Do not attempt to open it, install it, or copy its source code. Build equivalent visual effects independently.
+
+## 1. Inspect before modifying
+
+Inspect the existing project and identify:
+- The current framework and folder structure.
+- The existing entry point.
+- The working form analysis engine.
+- The Privacy Detective and Privacy Surgery features.
+- Existing styles, event handlers, and dependencies.
+
+Preserve the current application and make focused changes. Do not rewrite working features or replace the existing project with a new template.
+
+If the application uses plain HTML, CSS, and JavaScript, keep that architecture. Do not migrate to React, Next.js, TypeScript, or a build system just to add 3D effects.
+
+## 2. Visual identity
+
+Product: FormSentry  
+Tagline: Collect less. Explain more.
+
+Create a premium dark interface inspired by futuristic investigation rooms and advanced privacy analysis systems.
+
+Palette:
+- Near-black graphite background.
+- Electric lime green accents.
+- White and cool-grey text.
+- Amber for fields requiring review.
+- Restrained coral red for likely excessive collection.
+
+Use modern typography, clean spacing, subtle borders, and deliberate visual hierarchy.
+
+Avoid generic AI-dashboard styling, excessive neon, purple gradients, heavy glassmorphism, constant motion, and unnecessary decorative elements.
+
+## 3. Build an original 3D scanning grid
+
+Use Three.js to create a perspective grid environment.
+
+Requirements:
+- Dark floor grid extending into the distance.
+- Thin lime-green grid lines.
+- A restrained scanning beam travelling across the grid.
+- Subtle depth and perspective.
+- A few small floating data particles.
+- Slow, smooth movement.
+- Optional subtle mouse-based camera parallax.
+
+The grid should resemble a privacy investigation scanner, not a racing game or sci-fi shooter.
+
+Create the scene using native Three.js geometry and materials. Do not require external 3D models, textures, or inaccessible component libraries.
+
+Place this scene behind the hero section, not behind every page element.
+
+The heading, input editor, purpose selector, and Analyze button must remain readable.
+
+## 4. Create an interactive data-particle visualization
+
+Build a lightweight particle visualization using Three.js.
+
+Represent analyzed form fields as points in a contained 3D space.
+
+Use the actual analysis results:
+- Fields likely necessary: lime markers.
+- Fields potentially necessary or requiring justification: amber markers.
+- Fields likely excessive: restrained coral markers.
+- Unknown fields: neutral markers.
+
+If particle-to-field mapping is implemented, clicking a particle should select the corresponding field and open its actual evidence panel.
+
+If that interaction would destabilize the application, use an aggregate visualization driven by real counts and retain the existing HTML findings table for detailed inspection.
+
+When the user switches between the original and proposed minimized form, update the visualization using the actual field lists.
+
+Do not create random particles that falsely imply real findings.
+
+## 5. Connect the visuals to the real analysis engine
+
+The visual effects must reflect application state.
+
+Before analysis:
+- Display the calm idle scene.
+
+When Analyze is clicked:
+- Start the scanning animation.
+- Execute the actual rule-based analysis.
+- Display results after the real analysis completes.
+- Stop the scanning animation.
+
+When the purpose changes:
+- Recalculate field necessity.
+- Update the findings and visualization.
+- Clear stale results when appropriate.
+
+When analysis fails:
+- Display a useful error.
+- Return the scene to its idle state.
+
+Never use fake progress percentages, fabricated findings, or artificial delays merely to make the interface look impressive.
+
+The Three.js scene must not perform or replace the privacy analysis.
+
+## 6. Privacy Surgery transformation
+
+Make the before-and-after comparison visually memorable.
+
+Show:
+- Original form fields.
+- Proposed minimized form fields.
+- Fields recommended for removal.
+- Fields recommended to be optional or reviewed.
+- Fields recommended to remain.
+
+When the user changes the proposed form:
+- Update the real field lists and counts.
+- Animate the corresponding particles or visual markers.
+- Preserve the original audit findings.
+- Allow removed fields to be restored.
+- Keep user overrides separate from engine recommendations.
+
+The animation should reinforce the actual transformation, not pretend that a privacy improvement occurred when no underlying data changed.
+
+## 7. Performance and compatibility
+
+- Use a compatible, pinned Three.js version.
+- Avoid heavy post-processing and large shader systems.
+- Limit particle counts and rendering complexity.
+- Cap device pixel ratio.
+- Resize the renderer correctly.
+- Pause or reduce animation when the browser tab is hidden.
+- Respect the prefers-reduced-motion setting.
+- Provide a static CSS fallback if WebGL fails.
+- Reduce or disable 3D on low-performance mobile devices.
+- Avoid duplicate animation loops and memory leaks.
+- Clean up event listeners and rendering resources.
+- Keep all form controls clickable and accessible.
+
+If the current project is opened directly through file://, verify whether the chosen module-loading approach works. If a local server is required, document that honestly and provide the simplest reliable launch method.
+
+Keep the core application functional if Three.js fails to load.
+
+## 8. Privacy requirements
+
+All form analysis must remain local to the browser.
+
+Do not:
+- Upload HTML or field names.
+- Send analysis to an external AI service.
+- Log user-provided form content.
+- Persist pasted input unnecessarily.
+- Execute scripts contained in pasted HTML.
+
+The 3D effects must not transmit user data to any external service.
+
+## 9. Preserve every existing feature
+
+Do not break:
+- HTML parsing using DOMParser.
+- Manual field-name input.
+- Alias recognition.
+- Data-category classification.
+- Purpose-aware necessity analysis.
+- Evidence-based Privacy Detective.
+- Privacy Surgery.
+- Consent notice generation.
+- English, Hindi, and Marathi templates if implemented.
+- Findings filters and search.
+- Report export.
+- Clear All and Reset.
+
+Use the existing analysis engine as the source of truth.
+
+## 10. Final testing
+
+Test:
+1. Application startup.
+2. Rendering of the 3D scanning grid.
+3. Static fallback if WebGL is unavailable.
+4. Analysis of arbitrary pasted HTML.
+5. Manual field-name analysis.
+6. Purpose changes and updated findings.
+7. Correct field counts in Privacy Surgery.
+8. Particle or visualization updates.
+9. Reset and Clear All.
+10. Mobile layout and keyboard usability.
+11. Absence of major console errors.
+
+Do not claim tests passed unless they were actually run.
+
+Start by inspecting the existing files, then implement the smallest reliable set of changes that produces a dramatic visual improvement.
+
+At completion, report:
+- Files changed.
+- Dependencies added.
+- How to run the project.
+- Tests performed and their results.
+- Known limitations.
+
+The result should feel like an advanced privacy investigation environment while remaining a reliable, functional, browser-based tool.
