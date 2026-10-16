@@ -1,0 +1,978 @@
+# FORMSENTRY — ULTIMATE MASTER BUILD PROMPT
+## Evidence-Based DPDP Form Auditor + Futuristic 3D Privacy Investigation Lab
+
+Act as a senior full-stack engineer, Three.js developer, privacy-by-design specialist, interaction designer, and hackathon prototype expert.
+
+Your mission is to inspect, build, integrate, test, and finish **FormSentry**, a functional browser-based DPDP Form Auditor with an original futuristic 3D interface.
+
+Do not merely give me a plan, suggestions, or code snippets. Work directly inside the current project workspace. Inspect the existing code, preserve working functionality, implement the required features, run tests where possible, fix errors, and leave the project ready for a live hackathon demonstration.
+
+The result must be visually memorable, genuinely functional, privacy-conscious, and feasible to maintain.
+
+# PART 1 — PRODUCT VISION
+
+**Product:** FormSentry  
+**Tagline:** Collect less. Explain more.  
+**Experience:** A futuristic Privacy Investigation Lab.
+
+The problem: websites can request more personal information than is reasonably necessary for their stated purpose.
+
+FormSentry allows a user to paste HTML from a web form or enter field names, specify the form's purpose, and receive a rule-based privacy audit.
+
+The application must answer:
+
+1. What information does the form appear to collect?
+2. Which fields appear necessary, optional, excessive, or uncertain for the stated purpose?
+3. What evidence supports each finding?
+4. Why might a field be unnecessary?
+5. What should the form owner do instead?
+6. How can the form be redesigned to collect less information?
+7. What consent notice could be used as an editable draft?
+8. How do the findings change when the stated purpose changes?
+
+The core analysis must use deterministic JavaScript running locally in the browser. Do not use a remote AI API or send form input to any external service.
+
+# PART 2 — INSPECT THE EXISTING PROJECT FIRST
+
+Before changing anything:
+
+- Inspect the current directory and file structure.
+- Identify the framework and existing entry point.
+- Find the current form parser, classification rules, necessity engine, UI, and event handlers.
+- Identify which features already work.
+- Check existing dependencies and startup instructions.
+- Preserve working functionality.
+- Make focused modifications rather than replacing the project wholesale.
+- Avoid duplicate files, duplicate event handlers, and parallel implementations of existing logic.
+
+If the existing project is plain HTML, CSS, and JavaScript, retain that architecture.
+
+Do not migrate the application to React, Next.js, TypeScript, or a build system just to introduce 3D effects.
+
+If the project already uses another architecture, preserve it unless there is a concrete technical reason not to.
+
+Never claim that an existing feature works until you have inspected or tested it.
+
+# PART 3 — TECHNICAL CONSTRAINTS
+
+The core application must use:
+
+- HTML5
+- CSS3
+- Vanilla JavaScript and browser-native APIs
+- `DOMParser` for safe HTML inspection
+- Browser-native Blob and object URLs for text export
+
+The core auditor must not require:
+
+- A backend or database
+- An API key
+- External AI services
+- A local AI model
+- Paid services
+- A complex build system
+- A running server solely for the core analysis
+
+Three.js may be added for the visual experience, but it must be isolated from the core analysis engine.
+
+Use a pinned, compatible Three.js version. Prefer a small, original scene built from native geometry and materials.
+
+Do not install React Bits or attempt to copy inaccessible React Bits source code. Independently recreate the desired visual concepts using Three.js, CSS, and JavaScript.
+
+Important compatibility rule: ES modules and some CDN configurations may not work when opening a page using `file://`. Test the actual startup workflow. Preserve direct-file execution if practical; otherwise, document the simplest reliable launch method. A 3D loading failure must never prevent the auditor from working.
+
+# PART 4 — VISUAL DIRECTION: FUTURISTIC PRIVACY LAB
+
+Create a striking interface inspired by advanced investigation rooms, data analysis environments, and futuristic scanning systems.
+
+## Colour palette
+
+- Near-black graphite background.
+- Electric lime green for primary actions and likely necessary fields.
+- Cool white for important text.
+- Muted grey for secondary information.
+- Amber for fields needing justification or review.
+- Restrained coral red for likely excessive collection.
+
+## Typography and layout
+
+- Modern, readable typography.
+- Monospace text for field identifiers, technical evidence, and metadata.
+- Clear hierarchy between the input workspace, findings, and recommendations.
+- Strong contrast and clean spacing.
+- Sharp, deliberate panel borders.
+- Subtle depth and lighting.
+
+## Avoid
+
+- Generic AI-generated dashboard styling.
+- Purple AI gradients.
+- Excessive neon and glowing borders.
+- Unnecessary glassmorphism.
+- Constant movement.
+- Fake analytics.
+- Decorative charts unrelated to real results.
+- Large animations that delay the analysis.
+- An interface that sacrifices readability for effects.
+
+The finished interface should feel experimental and premium, but still usable by a judge who has never seen the application before.
+
+# PART 5 — ORIGINAL THREE.JS SCANNING GRID
+
+Create a lightweight, original 3D scanning environment using Three.js.
+
+Do not rely on external models, textures, inaccessible libraries, or a remote scene that could fail during the competition.
+
+## Scene design
+
+Build:
+
+- A dark perspective grid extending into the distance.
+- Thin electric-lime grid lines.
+- A subtle scanning beam travelling across the grid.
+- A few floating geometric particles.
+- Restrained depth and lighting.
+- Slow, smooth movement.
+- Optional subtle mouse-based parallax.
+
+The visual should resemble a privacy investigation scanner rather than a racing game, shooter, or generic sci-fi scene.
+
+Use native geometry, lightweight materials, and simple animations.
+
+## Placement
+
+Place the 3D scene behind the hero section or as a contained visual beside the primary heading.
+
+Do not place a full-screen animation behind every application section.
+
+The following elements must remain immediately readable:
+
+- FormSentry branding.
+- Tagline.
+- Input mode controls.
+- HTML editor.
+- Purpose selector.
+- Analyze button.
+- Privacy assurance message.
+
+The canvas must not block clicks, text selection, keyboard navigation, or scrolling.
+
+## Hero copy
+
+Use:
+
+**FORMSENTRY // PRIVACY INVESTIGATION LAB**
+
+**Collect less. Explain more.**
+
+“Investigate what a form collects, understand why each field exists, and redesign it to request less information.”
+
+Primary button: `INITIATE AUDIT`
+
+Secondary action: `LOAD TEST CASE`
+
+A small technical label may read `LOCAL RULE ENGINE`, provided this accurately describes the implementation.
+
+# PART 6 — INTERACTIVE DATA-PARTICLE VISUALIZATION
+
+Create a second, lightweight visualization representing the actual analyzed fields.
+
+The visualization should appear within the results or Privacy Surgery workspace, not replace the findings table.
+
+## Data mapping
+
+Use the actual audit results to determine the particle states:
+
+- Likely necessary: electric lime.
+- Potentially necessary or justification required: amber.
+- Likely excessive: restrained coral.
+- Unknown or requiring review: neutral grey.
+
+When the user switches between the original form and the proposed minimized form, update the visualization using the actual field lists.
+
+## Interaction
+
+If feasible without destabilizing the application:
+
+- Map particles to actual field identifiers.
+- Allow a particle to be selected.
+- Open the corresponding real evidence panel.
+- Visually distinguish fields proposed for removal.
+- Restore particles when a removed field is restored to the proposed form.
+
+If reliable one-to-one mapping is too complex, use an aggregate visualization driven by actual counts and preserve the existing HTML findings table as the authoritative interface.
+
+Do not invent field counts, random findings, fake risk levels, or false audit progress.
+
+The visualization is a presentation layer. The rule engine remains the source of truth.
+
+# PART 7 — CONNECT 3D ANIMATIONS TO REAL APPLICATION STATE
+
+The 3D effects must respond to real application events.
+
+### Idle state
+
+Display a calm grid with subtle movement.
+
+### Analysis begins
+
+When the user activates Analyze:
+
+- Start a scanning animation.
+- Execute the actual parser and rule engine.
+- Display findings when analysis finishes.
+- Stop the scanning animation.
+
+Because the core analysis is synchronous and may finish quickly, do not invent progress percentages or artificial delays. A brief visual transition is acceptable, but it must not misrepresent processing.
+
+### Analysis succeeds
+
+Display the actual findings and update the particle visualization.
+
+### Purpose changes
+
+Recalculate the necessity decisions, update the field table and proposed form, and refresh the visualization.
+
+### Analysis fails
+
+Display a useful error message and return the visual scene to its idle state.
+
+### Reset
+
+Clear the relevant application state and reset the visualization. Avoid leaving stale findings or particles on screen.
+
+Animations must never alter the actual audit decisions.
+
+# PART 8 — INPUT WORKSPACE
+
+Provide two input modes.
+
+## Mode A: Paste HTML
+
+Create a multiline editor where users can paste an HTML form.
+
+Example:
+
+<form>
+  <label for="email">Email</label>
+  <input type="email" id="email" name="user_email" autocomplete="email">
+
+  <label for="phone">Mobile number</label>
+  <input type="tel" id="phone" name="mob_no">
+
+  <label for="dob">Date of birth</label>
+  <input type="date" id="dob" name="dob">
+
+  <label for="aadhaar">Aadhaar number</label>
+  <input type="text" id="aadhaar" name="aadhaar_no">
+
+  <button type="submit">Subscribe</button>
+</form>
+
+Parse the pasted source with `DOMParser`.
+
+Extract metadata from:
+
+- `input`
+- `select`
+- `textarea`
+- `name`
+- `id`
+- `type`
+- `autocomplete`
+- `placeholder`
+- Associated label text
+
+Support labels connected by `for` attributes and nested labels.
+
+Handle malformed HTML, missing attributes, duplicate fields, and forms containing no recognizable user-data fields.
+
+Ignore ordinary submit buttons, reset controls, and obvious CSRF or operational tokens when calculating user-data counts. If an unusual hidden field appears to contain personal information, flag it for review.
+
+Never insert the raw pasted HTML into the live DOM. Never execute its scripts or event handlers. Never use `eval` or `new Function`.
+
+## Mode B: Enter field names
+
+Support comma-separated and newline-separated input.
+
+Example:
+
+user_email, mob_no, full_name, dob, aadhaar_no, home_address
+
+Normalize whitespace, handle duplicates, preserve original spelling, and show the normalized field name separately.
+
+## Purpose selector
+
+Include:
+
+- Newsletter signup
+- Contact or support
+- Account registration
+- Job application
+- E-commerce checkout
+- Appointment booking
+- School admission
+- Custom purpose
+
+When Custom purpose is selected, display an editable purpose field.
+
+The same form must produce different necessity decisions when the purpose changes, wherever the rule engine has relevant contextual rules.
+
+## Controls
+
+Provide:
+
+- Analyze form
+- Load example
+- Clear input
+- Reset analysis
+
+Do not generate results when the input is empty.
+
+# PART 9 — FIELD CLASSIFICATION ENGINE
+
+Implement a reusable, deterministic JavaScript engine.
+
+All mock cases, manual field lists, and pasted HTML must pass through the same parser and analysis pipeline.
+
+## Normalization
+
+Handle:
+
+- Uppercase and lowercase.
+- Snake case.
+- Camel case.
+- Hyphens and spaces.
+- Common abbreviations.
+- Common spelling variations.
+- Relevant HTML metadata and autocomplete attributes.
+
+Recognize common aliases, including:
+
+**Contact:** `mob_no`, `mobNo`, `mobile`, `mobile_number`, `phone`, `user_phone`, `phone_no`, `mail`, `email`, `email_id`, `user_email`, `contact_email`.
+
+**Identity:** `full_name`, `fname`, `first_name`, `last_name`, `customer_name`, `applicant_name`, `dob`, `birth_date`, `date_of_birth`, `birthdate`, `aadhaar`, `aadhaar_number`, `pan`, `pan_number`.
+
+**Address and location:** `addr`, `address`, `home_address`, `billing_address`, `pin`, `pincode`, `postal_code`, `zip_code`, `lat`, `lng`, `gps_location`, `current_location`, `home_location`.
+
+**Financial:** `salary`, `annual_income`, `bank_account`, `account_number`, `ifsc`.
+
+**Health:** `medical_history`, `diagnosis`, `blood_group`, `health_condition`.
+
+**Children's data:** `child_name`, `student_dob`, `guardian_phone`, `parent_email`, `minor_age`.
+
+**Other:** `password`, `username`, `order_id`, `message`, `comments`, `feedback`.
+
+Use explicit aliases, token-aware matching, and metadata. Avoid accidental matches caused by naive substring searches.
+
+## Categories
+
+Support:
+
+- Identity
+- Contact
+- Financial
+- Health
+- Location
+- Children's data
+- Authentication and security
+- User-generated content
+- Non-personal or operational
+- Unknown or requiring review
+
+For every field, record:
+
+- Original name.
+- Normalized name.
+- Category.
+- Personal-data assessment.
+- Evidence used.
+- Evidence strength.
+- Explanation.
+- Necessity decision.
+- Recommended action.
+- Whether review is needed.
+
+Use these personal-data assessment labels:
+
+- Likely personal data.
+- Likely not personal data.
+- Needs review.
+
+Unknown fields must not automatically be treated as non-personal.
+
+Classification and necessity are separate decisions.
+
+Do not expose actual password values or sensitive form values in findings, reports, or console logs.
+
+# PART 10 — FEATURE A: EVIDENCE-BASED PRIVACY DETECTIVE
+
+Every finding must answer three questions.
+
+## 1. What was detected?
+
+Example:
+
+“The field `mob_no` matches the mobile-number alias.”
+
+If metadata exists:
+
+“The input uses `type=tel` and its name matches a phone-number alias.”
+
+Show only evidence that actually exists in the input.
+
+## 2. Why might it be unnecessary?
+
+Example:
+
+“An Aadhaar identifier appears unrelated to the ordinary delivery of a digital newsletter. An email address would generally be sufficient for this purpose.”
+
+For ambiguous fields, explain the uncertainty.
+
+## 3. What should the owner do?
+
+Provide a context-sensitive recommendation:
+
+- Keep as required.
+- Make optional.
+- Remove.
+- Review the business justification.
+- Consider a less intrusive alternative.
+- Confirm the field's intended use.
+
+## Evidence panel
+
+Clicking a finding should reveal:
+
+- Original field name.
+- Normalized field name.
+- Matched alias or keyword.
+- Relevant HTML metadata.
+- Assigned category.
+- Selected purpose.
+- Personal-data assessment.
+- Necessity decision.
+- Explanation.
+- Recommended action.
+- Qualitative evidence strength.
+
+Use transparent rule-based evidence levels. Do not invent AI confidence percentages.
+
+## Necessity statuses
+
+Use exactly:
+
+1. Likely necessary.
+2. Potentially necessary — justification needed.
+3. Likely excessive.
+4. Unknown — review required.
+
+These are heuristic outcomes, not legal determinations.
+
+# PART 11 — PURPOSE-AWARE NECESSITY RULES
+
+Implement readable, maintainable rules.
+
+### Newsletter signup
+
+- Email: generally necessary.
+- Name: optional or purpose-dependent.
+- Mobile number: generally unnecessary without an additional explained purpose.
+- Date of birth: generally excessive without justification.
+- Aadhaar or PAN: generally excessive.
+- Home address: generally excessive for a digital newsletter.
+- Health information: generally excessive.
+- Newsletter preferences: potentially useful, often optional.
+
+### Contact or support
+
+- Message or issue description: generally necessary.
+- One usable reply channel: generally necessary.
+- Name: often optional.
+- Unrelated identity, financial, health, or location details: generally require justification.
+
+### Account registration
+
+- Username and/or email: often relevant.
+- Authentication credentials: context-dependent.
+- Phone: purpose-dependent.
+- Date of birth, precise location, financial details, and identity numbers: require specific justification.
+
+### Job application
+
+- Applicant name and contact: generally relevant.
+- Resume, qualifications, and experience: generally relevant.
+- Bank details: usually unnecessary at the initial application stage.
+- PAN or Aadhaar: do not assume they are needed at the application stage.
+- Medical history: requires careful scrutiny and a specific justification.
+
+### E-commerce checkout
+
+- Delivery address: relevant for physical delivery.
+- Contact details: context-dependent.
+- Payment data: prefer reputable payment processors instead of collecting unnecessary card or bank credentials directly.
+- Date of birth and health data: generally require justification.
+
+### Appointment booking
+
+- Contact and appointment details: generally relevant.
+- Health information: depends on the appointment and should be limited to what is reasonably needed.
+- Aadhaar and unrelated financial data: generally require justification.
+
+### School admission
+
+- Student identity and guardian contact: potentially relevant.
+- Student date of birth: potentially necessary depending on admission requirements.
+- Address and guardian details: context-dependent.
+- Children's data must receive special attention.
+- Do not automatically flag every child-related field as excessive.
+
+### Custom purpose
+
+Use conservative keyword and category rules. When the purpose is ambiguous or unsupported, explain that limitation and request human review.
+
+Never pretend these heuristics establish legal compliance.
+
+# PART 12 — FEATURE B: PRIVACY SURGERY
+
+This is the main product differentiator.
+
+Create an interactive before-and-after workspace comparing:
+
+**Original Form** versus **Recommended Minimized Form**.
+
+Generate the proposed form from actual findings, not hardcoded results.
+
+## Three groups
+
+### KEEP
+Fields assessed as likely necessary.
+
+### OPTIONAL / REVIEW
+Fields that are potentially useful, optional, or uncertain.
+
+### REMOVE
+Fields assessed as likely excessive for the stated purpose.
+
+Never silently alter the original input.
+
+## Before-and-after comparison
+
+Show actual counts for:
+
+- Original fields.
+- Fields recommended to remain.
+- Fields recommended to be optional or reviewed.
+- Fields recommended for removal.
+- Proposed remaining fields.
+
+## Functional controls
+
+Implement:
+
+- View original form.
+- View recommended form.
+- View removed fields.
+- View optional/review fields.
+- Restore a removed field.
+- Mark a field optional.
+- Inspect the reason for a recommendation.
+- Copy the recommended field list.
+- Reset proposed changes to the engine's recommendations.
+
+All controls must work.
+
+Preserve the original audit findings when the user changes a proposal. Track user overrides separately from engine recommendations.
+
+## 3D integration
+
+The particle visualization should reflect the original or proposed field list currently being viewed.
+
+When a field is removed from the proposal, update the actual visualization accordingly. When restored, bring it back.
+
+Use a subtle transformation animation, but keep the field names, counts, explanations, and controls in ordinary accessible HTML.
+
+## Purpose comparison
+
+When the user changes the purpose, rerun the analysis and show:
+
+- Which decisions changed.
+- Which decisions stayed the same.
+- Newly identified excessive fields.
+- Fields needing further review.
+
+Never update only the label while retaining stale analysis results.
+
+# PART 13 — MINIMUM DATA ALTERNATIVES
+
+For likely excessive or unnecessarily detailed fields, suggest a less intrusive alternative where appropriate.
+
+Examples:
+
+- Full date of birth used only for an age threshold: consider an age-eligibility confirmation, if sufficient for the actual requirement.
+- Full home address for a digital newsletter: remove it.
+- Mandatory mobile number where email is sufficient: make it optional or remove it.
+- Detailed health history when only a limited appointment detail is needed: request only the relevant information.
+
+Do not suggest alternatives blindly. If the context does not establish that an alternative is adequate, explain the limitation.
+
+Display the alternatives as recommendations for the form owner to review.
+
+# PART 14 — FEATURE C: CONSENT STUDIO
+
+Generate an editable consent notice based on actual analyzed fields and the selected purpose.
+
+The notice should address:
+
+- Categories of data proposed for collection.
+- Stated purpose.
+- Optional information, where relevant.
+- How consent may be withdrawn.
+- An editable placeholder for the actual withdrawal method and organization contact.
+- A visible draft/review disclaimer.
+
+Do not invent retention policies, sharing arrangements, security guarantees, contact details, or withdrawal mechanisms.
+
+Do not include fields proposed for removal as if their collection had been approved.
+
+Provide a Copy Notice button.
+
+## English, Hindi, and Marathi
+
+Implement complete local templates for:
+
+- English.
+- हिन्दी.
+- मराठी.
+
+Use deterministic interpolation; no translation API.
+
+The notice body must genuinely use the selected language, including the relevant purpose and data categories.
+
+Do not display an incomplete translation as complete.
+
+Clearly mark every generated notice as a draft for review, not a legal certification.
+
+## Consent Notice Quality Check
+
+Build a checklist that inspects the generated draft for:
+
+- A clearly stated purpose.
+- Mention of relevant data categories.
+- Optional-field language where applicable.
+- Withdrawal instructions.
+- Unresolved placeholders.
+- Draft/review disclaimer.
+
+Update the checklist when the notice is edited.
+
+Call this a notice quality check, not a legal compliance verdict.
+
+# PART 15 — RESULTS WORKSPACE
+
+Create a professional, visually distinctive evidence wall.
+
+## Summary indicators
+
+Calculate from real analysis results:
+
+- Total analyzed user-data fields.
+- Likely personal-data fields.
+- Likely excessive fields.
+- Fields requiring review.
+
+Never use hardcoded numbers.
+
+## Results table
+
+Include:
+
+- Field name.
+- Data category.
+- Personal-data assessment.
+- Necessity status.
+- Evidence or reason.
+- Recommended action.
+
+Add functional filters:
+
+- All fields.
+- Personal data.
+- Likely excessive.
+- Needs review.
+- Potentially necessary.
+
+Add search if practical.
+
+Clicking a row should reveal the corresponding evidence details.
+
+Keep the table readable on mobile.
+
+# PART 16 — OPTIONAL DATA MINIMIZATION SCORE
+
+Only implement this after all core features work.
+
+Label it:
+
+**Data Minimization Score — Heuristic**
+
+Use a 0–100 scale with an understandable calculation.
+
+Account for:
+- Likely excessive collection.
+- Unjustified sensitive information.
+- Uncertainty and manual review.
+- Differences in field significance.
+
+Avoid treating every field equally or rewarding forms merely for having fewer fields.
+
+Explain the score's factors.
+
+Do not call it an official DPDP compliance score.
+
+# PART 17 — MOCK EXAMPLES, REAL ENGINE
+
+Create three usable examples. Every example must pass through the same real analysis engine.
+
+## Example A: Newsletter
+
+Fields:
+
+`user_email`, `mob_no`, `full_name`, `dob`, `aadhaar_no`, `home_address`, `health_condition`, `newsletter_frequency`
+
+Expected general behavior:
+- Email: generally necessary.
+- Name, mobile, frequency: optional or purpose-dependent.
+- Date of birth, Aadhaar, address, health: likely excessive without justification.
+
+## Example B: Job application
+
+Fields:
+
+`applicant_name`, `contact_email`, `mobile_no`, `resume_url`, `years_of_experience`, `birth_date`, `pan_number`, `bank_account`, `medical_history`
+
+Expected general behavior:
+- Name, contact, resume, experience: relevant.
+- Bank details and identifiers: scrutinize the application stage.
+- Medical history: not automatically justified initially.
+
+## Example C: School admission
+
+Fields:
+
+`student_name`, `student_dob`, `parent_email`, `guardian_phone`, `home_address`, `blood_group`, `aadhaar_no`, `parent_annual_income`
+
+Expected general behavior:
+- Highlight children's data.
+- Use context-sensitive rules.
+- Do not automatically mark every child-related field excessive.
+- Explain uncertain fields.
+
+Mock cases are for demonstrations and testing only. The application must also analyze arbitrary unseen inputs.
+
+# PART 18 — PRIVACY AND SAFE HANDLING
+
+All analysis must stay in the browser.
+
+Never:
+- Upload form HTML or field names.
+- Use remote AI analysis.
+- Log pasted input or sensitive field values.
+- Store pasted content in localStorage or sessionStorage.
+- Put input content into URLs or browser history.
+- Execute pasted scripts or event handlers.
+- Render raw pasted HTML as trusted markup.
+- Include actual password values in findings or exports.
+
+Use `DOMParser` only to extract metadata. Use `textContent` or safe DOM construction for user-supplied text.
+
+The 3D renderer must not receive or transmit user form content.
+
+Provide a working Clear All action that removes current input, findings, proposed changes, notices, and visualization state.
+
+The privacy assurance message must describe the application's actual behavior accurately.
+
+# PART 19 — REPORT EXPORT
+
+Implement a downloadable `.txt` audit report using browser-native Blob and object URLs.
+
+Include:
+
+- Selected purpose.
+- Audit summary.
+- Field classifications.
+- Necessity decisions.
+- Evidence.
+- Explanations.
+- Recommended actions.
+- Minimum-data alternatives where applicable.
+- Data Minimization Score if implemented.
+- Proposed minimized form.
+- Generated consent notice.
+- Unresolved placeholders and review warnings.
+
+Use a descriptive filename such as `formsentry-audit-report.txt`.
+
+PDF export is optional. If time is limited, prioritize accurate text export and print-friendly CSS.
+
+# PART 20 — PERFORMANCE, ACCESSIBILITY, AND FALLBACKS
+
+The 3D experience must enhance the auditor without becoming a dependency for its essential functionality.
+
+Implement:
+
+- A pinned, compatible Three.js version.
+- Lightweight geometry and materials.
+- A capped device pixel ratio.
+- Correct renderer resizing.
+- No duplicated animation loops.
+- Proper cleanup of listeners and rendering resources.
+- Reduced animation when the browser tab is hidden.
+- Respect for `prefers-reduced-motion`.
+- A reduced-detail mode for mobile and low-performance devices.
+- A static CSS fallback if WebGL is unavailable.
+- Graceful failure if the Three.js library cannot load.
+- Keyboard-accessible controls and visible focus indicators.
+- Sufficient contrast.
+- No risk status communicated through color alone.
+
+If the 3D effects fail, all core FormSentry functionality must remain usable.
+
+# PART 21 — REQUIRED TESTS
+
+Run and report the actual outcome of these tests.
+
+### Test 1: Messy aliases
+
+Analyze:
+
+`user_email`, `mob_no`, `mobileNumber`, `user_phone`, `dob`, `aadhaar_no`, `addr`, `health_condition`
+
+Check alias recognition, duplicate handling, original-name preservation, and separate classification/necessity decisions.
+
+### Test 2: HTML parser
+
+Paste HTML with labels, input types, autocomplete attributes, placeholders, a textarea, a select, and submit controls.
+
+Check extraction, evidence accuracy, safe parsing, and malformed HTML handling.
+
+### Test 3: Purpose changes
+
+Analyze `student_dob` and `home_address` for a newsletter, then change the purpose to school admission.
+
+Check recalculation, changed decisions, updated proposal, and refreshed visualization.
+
+### Test 4: Privacy Detective
+
+Open the finding for `aadhaar_no`.
+
+Check that it explains what was detected, why it may be unnecessary, and what the owner should do.
+
+### Test 5: Privacy Surgery
+
+Check that all groups are derived from actual results, controls work, counts update, removed fields can be restored, and user overrides remain separate from engine recommendations.
+
+### Test 6: Consent Studio
+
+Check that notices use actual findings, placeholders remain editable, language selection works, copying works, and the quality checklist updates.
+
+### Test 7: Unknown fields
+
+Analyze `x7_data`.
+
+Check that it is not confidently declared non-personal without evidence and that the reason for uncertainty is displayed.
+
+### Test 8: Empty and malformed input
+
+Check empty input, missing purpose, malformed HTML, no recognizable fields, and duplicate names.
+
+### Test 9: Privacy and export
+
+Check that the application runs without API keys or a backend, does not persist input, exports current analysis accurately, and clears all state correctly.
+
+### Test 10: 3D and performance
+
+Check:
+- Grid renders correctly.
+- Particle visualization uses actual results.
+- WebGL failure produces a usable fallback.
+- Resizing works.
+- Reset clears the visuals.
+- The canvas does not block controls.
+- Mobile and reduced-motion modes work.
+- No major runtime errors or duplicated animation loops appear.
+
+Do not claim a test passed unless you actually performed it.
+
+# PART 22 — IMPLEMENTATION PRIORITIES
+
+Follow this order to avoid spending too much time on visuals before the application works.
+
+**Priority 1 — Core auditor**
+- Inspect existing project.
+- Safe HTML parsing.
+- Field normalization and classification.
+- Purpose-aware necessity engine.
+- Evidence-based findings.
+
+**Priority 2 — Main product workflow**
+- Results table and filters.
+- Privacy Surgery.
+- Editable consent notice.
+- Working mock examples.
+
+**Priority 3 — Signature innovations**
+- Minimum Data Alternatives.
+- Original-versus-proposed comparison.
+- Purpose-change comparison.
+- Consent Notice Quality Check.
+
+**Priority 4 — Visual enhancement**
+- Three.js scanning grid.
+- State-driven particle visualization.
+- Subtle transformation animation.
+- Responsive visual polish.
+
+**Priority 5 — Final stretch goals**
+- Hindi and Marathi templates.
+- Heuristic score.
+- Text export refinements.
+- Final acceptance tests.
+
+If the project already implements any of these, do not rebuild it unnecessarily.
+
+If time is limited, preserve all required functionality, complete Privacy Surgery, implement the scanning grid, and defer the particle interaction or optional score rather than destabilizing the project.
+
+# PART 23 — DEFINITION OF DONE
+
+The project is finished only when:
+
+- It opens using a documented, working startup method.
+- Users can paste arbitrary HTML or enter field names.
+- The rule engine analyzes real input.
+- Field classifications and necessity decisions are explainable.
+- Purpose changes recalculate results.
+- Privacy Surgery works and is reversible.
+- Minimum-data alternatives are sensible and contextual.
+- Consent notices are generated from real findings.
+- Supported language templates are complete.
+- Mock examples use the actual analysis engine.
+- The 3D grid renders or falls back gracefully.
+- Particles reflect actual field data.
+- The 3D effects never block or replace the analysis.
+- Input remains local.
+- Exports reflect the actual audit.
+- No major runtime errors remain.
+
+After implementation, provide a concise report with:
+
+1. Files created or modified.
+2. Features implemented.
+3. Dependencies added.
+4. How to run the application.
+5. Tests actually performed and their outcomes.
+6. Known limitations.
+7. Remaining bugs, if any.
+8. A three-minute demo sequence.
+
+Start by inspecting the current project. Then implement and test the application directly. Do not stop after presenting a plan.
